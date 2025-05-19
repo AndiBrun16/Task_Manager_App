@@ -70,25 +70,31 @@ $conn->close();
             </div>
         </div>
         <div class='hero-img'>
-            <img src="images/hero.svg" alt="">
+            <img src="images/hero2.svg" alt="">
         </div>
     </section>
     <section class="Login" id="login-section">
+        
+    <div class="login-image">
+        <img src="images/girl.gif" alt="">
+    </div>
+    <div class="login-form">
         <h2>Login</h2>
         <?php echo $error ? display_error($error) : ''; ?>
         <form method="post">
-    <div class="form-group">
-        <label for="username">Username:</label>
-        <input type="text" id="username" name="username" required>
-    </div>
-    <div class="form-group">
-        <label for="password">Password:</label>
-        <input type="password" id="password" name="password" required>
-    </div>
-    <button type="submit" name="login">Login</button>
-</form>
+            <div class="form-group">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" required>
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" required>
+            </div>
+            <button type="submit" name="login">Login</button>
+        </form>
         <p>Don't have an account? <a href="register.php">Register here</a>.</p>
-    </section>
+    </div>
+</section>
    <script src="js/script.js"></script>
 </body>
 </html>

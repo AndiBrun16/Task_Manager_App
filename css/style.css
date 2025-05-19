@@ -9,7 +9,7 @@
 :root {
     --bg-color: #0c0c0c;
     --text-color: #ffffff;
-    --main-color: #ffbb00;
+    --main-color: #ca1bff;
     --big-font: 7rem;
     --p-font: 1.1rem;
 }
@@ -31,7 +31,7 @@ header {
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background-color: rgba(12, 12, 12, 0.9);
+    background-color: rgb(23 22 28);
 }
 
 .logo img {
@@ -84,7 +84,7 @@ header {
     position: relative;
     width: 100%;
     height: 100vh;
-    background: url(../images/bg.png);
+    background: url(../images/wave.jpg);
     background-size: cover;
     background-position: center;
     display: grid;
@@ -116,7 +116,7 @@ header {
     font-size: var(--big-font);
     font-weight: 900;
     margin: 10px 0;
-    background: linear-gradient(90deg, #ff7b00, #f4f80f, #ffae00, #f4f80f, #ff7b00);
+    background: linear-gradient(90deg, #d817ff, #7832fc, #a114ff, #7832fc, #d817ff);
     background-size: 200%;
     background-clip: text;
     -webkit-background-clip: text;
@@ -171,29 +171,37 @@ header {
 .Login {
     display: flex;
     justify-content: center;
-    flex-direction: column;
     align-items: center;
-    margin-top: -50px; /* Începe cu o valoare negativă și ajustează */
-    min-height: 100vh; /* Menține pentru centrare verticală inițială */
-    padding-top: 50px; /* Ajustează padding-ul superior */
-    padding-bottom: 20px; /* Ocupă cel puțin înălțimea viewport-ului */
-     /* Adaugă puțin spațiu în jurul conținutului */
-    /* background-color: rgba(0, 0, 0, 0.1); /* Opțional: un fundal pentru a vizualiza secțiunea */
+    min-height: 100vh;
+    padding: 80px;
+    gap: 80px;
+    background: url(../images/note.jpg);
+    background-size: cover;
+    background-position: center;
 }
 
-.Login .container {
+.Login .login-image img {
+    max-width: 500px; /* Lățimea maximă a imaginii (poți ajusta) */
+    height: auto; /* Menține proporțiile imaginii */
+}
+
+.Login .login-form {
+    display: flex; /* Activăm flexbox pentru elementele din formular */
+    flex-direction: column; /* Le aliniem vertical */
+    align-items: center; /* Centrarea orizontală a elementelor din formular (opțional) */
     background-color: #f9f9f9;
     padding: 50px;
     border-radius: 12px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-    max-width: 500px; /* Ajustează lățimea după preferințe */
-    width: 100%; /* Asigură-te că ocupă lățimea maximă disponibilă în containerul flex */
+    max-width: 500px;
+    width: 100%;
     color: #333;
     border: 4px solid var(--main-color);
-    margin: 0; /* Elimină marginile pentru că secțiunea se ocupă de centrare */
+    margin: 0;
 }
 
-.Login h2 {
+/* Restul stilurilor pentru .Login .login-form h2, .Login .login-form .form-group, etc. rămân aceleași, dar prefixate cu .Login .login-form pentru specificitate dacă e necesar */
+.Login .login-form h2 {
     color: var(--main-color);
     text-align: center;
     margin-bottom: 40px;
@@ -203,11 +211,12 @@ header {
     letter-spacing: 1px;
 }
 
-.Login .form-group {
+.Login .login-form .form-group {
     margin-bottom: 25px;
+    width: 100%; /* Asigură-te că ocupă lățimea containerului .login-form */
 }
 
-.Login .form-group label {
+.Login .login-form .form-group label {
     display: block;
     margin-bottom: 12px;
     font-weight: bold;
@@ -215,8 +224,8 @@ header {
     font-size: 1.1rem;
 }
 
-.Login .form-group input[type="text"],
-.Login .form-group input[type="password"] {
+.Login .login-form .form-group input[type="text"],
+.Login .login-form .form-group input[type="password"] {
     width: 100%;
     padding: 18px;
     border: 2px solid #ddd;
@@ -225,13 +234,13 @@ header {
     transition: border-color 0.3s ease;
 }
 
-.Login .form-group input:focus {
+.Login .login-form .form-group input:focus {
     border-color: var(--main-color);
     outline: none;
     box-shadow: 0 0 8px rgba(255, 187, 0, 0.5);
 }
 
-.Login button[type="submit"][name="login"] {
+.Login .login-form button[type="submit"][name="login"] {
     background-color: var(--main-color);
     color: var(--bg-color);
     padding: 18px 35px;
@@ -246,25 +255,25 @@ header {
     margin-top: 30px;
 }
 
-.Login button[type="submit"][name="login"]:hover {
+.Login .login-form button[type="submit"][name="login"]:hover {
     transform: translateY(-3px);
     box-shadow: 0 6px 15px rgba(255, 187, 0, 0.6);
 }
 
-.Login p {
+.Login .login-form p {
     text-align: center;
     margin-top: 30px;
     font-size: 1.1rem;
     color: #777;
 }
 
-.Login p a {
+.Login .login-form p a {
     color: var(--main-color);
     font-weight: bold;
     transition: color 0.3s ease;
 }
 
-.Login p a:hover {
+.Login .login-form p a:hover {
     color: #cc9900;
 }
 
