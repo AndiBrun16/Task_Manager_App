@@ -167,49 +167,203 @@ header {
 .btn:hover {
     transform: scale(1.2);
 }
+/* Stiluri pentru secțiunea Login */
+.Login {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    margin-top: -50px; /* Începe cu o valoare negativă și ajustează */
+    min-height: 100vh; /* Menține pentru centrare verticală inițială */
+    padding-top: 50px; /* Ajustează padding-ul superior */
+    padding-bottom: 20px; /* Ocupă cel puțin înălțimea viewport-ului */
+     /* Adaugă puțin spațiu în jurul conținutului */
+    /* background-color: rgba(0, 0, 0, 0.1); /* Opțional: un fundal pentru a vizualiza secțiunea */
+}
+
+.Login .container {
+    background-color: #f9f9f9;
+    padding: 50px;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    max-width: 500px; /* Ajustează lățimea după preferințe */
+    width: 100%; /* Asigură-te că ocupă lățimea maximă disponibilă în containerul flex */
+    color: #333;
+    border: 4px solid var(--main-color);
+    margin: 0; /* Elimină marginile pentru că secțiunea se ocupă de centrare */
+}
+
+.Login h2 {
+    color: var(--main-color);
+    text-align: center;
+    margin-bottom: 40px;
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+}
+
+.Login .form-group {
+    margin-bottom: 25px;
+}
+
+.Login .form-group label {
+    display: block;
+    margin-bottom: 12px;
+    font-weight: bold;
+    color: #555;
+    font-size: 1.1rem;
+}
+
+.Login .form-group input[type="text"],
+.Login .form-group input[type="password"] {
+    width: 100%;
+    padding: 18px;
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.2rem;
+    transition: border-color 0.3s ease;
+}
+
+.Login .form-group input:focus {
+    border-color: var(--main-color);
+    outline: none;
+    box-shadow: 0 0 8px rgba(255, 187, 0, 0.5);
+}
+
+.Login button[type="submit"][name="login"] {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 18px 35px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 30px;
+}
+
+.Login button[type="submit"][name="login"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 187, 0, 0.6);
+}
+
+.Login p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #777;
+}
+
+.Login p a {
+    color: var(--main-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+.Login p a:hover {
+    color: #cc9900;
+}
 
 /* FORM STYLES */
+/* Modificări pentru containerul formularului de înregistrare */
+.Register {
+    display: flex; /* Activează flexbox pentru secțiune */
+    justify-content: center; /* Centrează orizontal conținutul */
+    align-items: center; /* Centrează vertical conținutul */
+    min-height: 100vh;
+     /* Asigură că secțiunea ocupă cel puțin înălțimea viewport-ului */
+    /* background-color: rgba(0, 0, 0, 0.1); /* Optional: un fundal pentru a vizualiza secțiunea */
+}
+
 .container {
-    background-color: #fff;
-    padding: 30px;
-    border-radius: 8px;
-    box-shadow: 0 0 20px rgba(0, 0, 0, 0.2);
-    max-width: 600px;
-    margin: 50px auto;
+    background-color: #f9f9f9;
+    padding: 50px; /* Mărește padding-ul general al containerului */
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    width: 80%; /* Fă containerul mai lat */
     color: #333;
+    border: 4px solid var(--main-color);
+    margin: 150px auto;
 }
 
 .container h2 {
     color: var(--main-color);
     text-align: center;
-    margin-bottom: 25px;
+    margin-bottom: 40px; /* Mai mult spațiu sub titlu */
+    font-size: 2.5rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .form-group {
-    margin-bottom: 20px;
+    margin-bottom: 25px; /* Mărește spațiul dintre grupurile de input-uri */
 }
 
 .form-group label {
     display: block;
-    margin-bottom: 8px;
-    font-weight: bold;
+    margin-bottom: 12px; /* Mai mult spațiu sub etichetă */
+    font-weight: bold; /* Fă etichetele mai groase */
     color: #555;
+    font-size: 1.1rem; /* Fă etichetele puțin mai mari */
 }
 
 .form-group input[type="text"],
 .form-group input[type="password"],
 .form-group input[type="email"] {
     width: 100%;
-    padding: 12px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    font-size: 16px;
-    transition: border-color 0.3s;
+    padding: 18px; /* Mărește padding-ul interior al input-urilor */
+    border: 2px solid #ddd;
+    border-radius: 6px;
+    font-size: 1.2rem; /* Fă textul din input-uri mai mare */
+    transition: border-color 0.3s ease;
 }
 
 .form-group input:focus {
     border-color: var(--main-color);
     outline: none;
+    box-shadow: 0 0 8px rgba(255, 187, 0, 0.5);
+}
+
+button[type="submit"][name="register"] {
+    background-color: var(--main-color);
+    color: var(--bg-color);
+    padding: 18px 35px; /* Mărește dimensiunea butonului */
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: 600;
+    transition: all 0.3s ease;
+    display: block;
+    width: 100%;
+    margin-top: 30px; /* Mai mult spațiu deasupra butonului */
+}
+
+button[type="submit"][name="register"]:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 6px 15px rgba(255, 187, 0, 0.6);
+}
+
+p {
+    text-align: center;
+    margin-top: 30px;
+    font-size: 1.1rem;
+    color: #777;
+}
+
+p a {
+    color: var(--main-color);
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+p a:hover {
+    color: #cc9900;
 }
 
 /* TASK STYLES */

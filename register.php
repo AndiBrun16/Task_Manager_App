@@ -2,12 +2,13 @@
 require_once 'includes/db_connect.php';
 require_once 'includes/functions.php';
 
+// Inițializăm variabilele $error și $success
+$error = '';
+$success = '';
+
 if (is_logged_in()) {
     redirect('tasks.php');
 }
-
-$error = '';
-$success = '';
 
 if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
     $username = $_POST['username'];
@@ -46,9 +47,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['register'])) {
             $stmt = $conn->prepare("INSERT INTO users (username, email, password) VALUES (?, ?, ?)");
             $stmt->bind_param("sss", $username, $email, $hashed_password);
             if ($stmt->execute()) {
-                $success = 'Registration successful. You can now <a href="index.php">log in</a>.';
+                $success = 'Registration successful.';
             } else {
                 $error = 'Registration failed. Please try again.';
+                // Adaugă această linie pentru a vedea eroarea MySQL în logurile serverului
+                error_log("MySQL Error: " . $conn->error);
             }
         }
         $stmt->close();
@@ -67,31 +70,45 @@ $conn->close();
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
-    <div>
-        <h2>Register</h2>
-        <?php echo $error ? display_error($error) : ''; ?>
-        <?php echo isset($success) ? display_success($success) : ''; ?>
-        <form method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="email">Email:</label>
-                <input type="email" id="email" name="email" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <div>
-                <label for="confirm_password">Confirm Password:</label>
-                <input type="password" id="confirm_password" name="confirm_password" required>
-            </div>
-            <button type="submit" name="register">Register</button>
-        </form>
-        <p>Already have an account? <a href="index.php">Log in here</a>.</p>
-    </div>
+    <header>
+        <a href ='#'><img src="images/logo.png" alt="SimpleDo Logo"></a>
+        <ul class="navlist">
+            <li><a href="index.php#Home">Home</a></li>
+            <li><a href="#">About</a></li>
+            <li><a href="#">Contact</a></li>
+        </ul>
+        <div class='right-content'>
+            <a href="index.php#login-section" class='nav-btn'>Sign In</a>
+            <div class='bx bx-menu' id='menu-icon'></div>
+        </div>
+    </header>
+    <section class='Register'>
+        <div class="container">
+            <h2>Register</h2>
+            <?php echo $error ? display_error($error) : ''; ?>
+            <?php echo isset($success) ? display_success($success) : ''; ?>
+            <form method="post">
+                <div class="form-group">
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" name="username" required>
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <label for="confirm_password">Confirm Password:</label>
+                    <input type="password" id="confirm_password" name="confirm_password" required>
+                </div>
+                <button type="submit" name="register">Register</button>
+            </form>
+            <p>Already have an account? <a href="index.php#login-section">Log in here</a>.</p>
+        </div>
+    </section>
     <script src="js/script.js"></script>
 </body>
 </html>

@@ -19,7 +19,9 @@ function display_error($message) {
 }
 
 function display_success($message) {
-    echo '<div class="success">' . htmlspecialchars($message) . '</div>';
+    if (!empty($message)) {
+        echo '<div class="success">' . htmlspecialchars($message) . '</div>';
+    }
 }
 
 function get_user_by_id($conn, $user_id) {

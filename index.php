@@ -51,12 +51,12 @@ $conn->close();
     <header>
         <a href ='#'><img src="images/logo.png" alt="SimpleDo Logo"></a>
         <ul class="navlist">
-            <li><a href="Home">Home</a></li>
+            <li><a href="index.php#Home">Home</a></li>
             <li><a href="#">About</a></li>
             <li><a href="#">Contact</a></li>
         </ul>
         <div class='right-content'>
-            <a href="#" class='nav-btn'>Sign In</a>
+            <a href="index.php#login-section" class='nav-btn'>Sign In</a>
             <div class='bx bx-menu' id='menu-icon'></div>
         </div>
     </header>
@@ -66,61 +66,29 @@ $conn->close();
             <h1>-SimpleDo</h1>
             <p>Your simple task management solution. Note, Work and Complete any task you set out through your day!  </p>
             <div class='main-hero'>
-                <a href="#" class='btn'>TRY IT NOW!</a>
+                <a href="register.php" class='btn'>TRY IT NOW!</a>
             </div>
         </div>
         <div class='hero-img'>
             <img src="images/hero.svg" alt="">
         </div>
     </section>
-    <section>
+    <section class="Login" id="login-section">
         <h2>Login</h2>
         <?php echo $error ? display_error($error) : ''; ?>
         <form method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" name="login">Login</button>
-        </form>
+    <div class="form-group">
+        <label for="username">Username:</label>
+        <input type="text" id="username" name="username" required>
+    </div>
+    <div class="form-group">
+        <label for="password">Password:</label>
+        <input type="password" id="password" name="password" required>
+    </div>
+    <button type="submit" name="login">Login</button>
+</form>
         <p>Don't have an account? <a href="register.php">Register here</a>.</p>
     </section>
-    <section>
-        <h2>Login</h2>
-        <?php echo $error ? display_error($error) : ''; ?>
-        <form method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" name="login">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.php">Register here</a>.</p>
-    </section>
-    <section>
-        <h2>Login</h2>
-        <?php echo $error ? display_error($error) : ''; ?>
-        <form method="post">
-            <div>
-                <label for="username">Username:</label>
-                <input type="text" id="username" name="username" required>
-            </div>
-            <div>
-                <label for="password">Password:</label>
-                <input type="password" id="password" name="password" required>
-            </div>
-            <button type="submit" name="login">Login</button>
-        </form>
-        <p>Don't have an account? <a href="register.php">Register here</a>.</p>
-    </section>
-    <script src="js/script.js"></script>
+   <script src="js/script.js"></script>
 </body>
 </html>
